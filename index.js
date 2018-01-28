@@ -1,6 +1,11 @@
 class NgxExtract {
-    sayHello() {
-        console.log("Hello");
+
+    static from(params) {
+        const extract = new NgxExtract();
+
+        extract.appModulePath = param.appModulePath;
+
+        return extract;
     }
 }
 
