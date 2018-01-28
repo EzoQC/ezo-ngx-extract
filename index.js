@@ -7,6 +7,10 @@ class NgxExtract {
 
         return extract;
     }
+
+    extractModule(options) {
+
+    }
 }
 
 module.exports = NgxExtract;
