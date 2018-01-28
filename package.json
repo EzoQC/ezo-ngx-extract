@@ -1,6 +1,6 @@
 {
   "name": "ezo-ngx-extract",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Extrait un module angular d'une application",
   "main": "index.js",
   "scripts": {
