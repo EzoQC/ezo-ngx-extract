@@ -1,16 +1,24 @@
-class NgxExtract {
+const NgxExtract = require('./ngx-extract/ngx-extract');
+const NgxTsModuleParser = require('./ngx-ts-module-parser/ngx-ts-module-parser');
 
-    static from(params) {
-        const extract = new NgxExtract();
+/* Remove */
+const moduleParser = NgxTsModuleParser.fromRoot('C:\\Users\\Mona\\Desktop\\inplace-input\\inplace-input\\src\\app');
+const extractor = NgxExtract.from({
+    appModulePath: moduleParser.path,
+    moduleParser: moduleParser
+});
 
-        extract.appModulePath = param.appModulePath;
-
-        return extract;
+extractor.extractModule({
+    fullName: 'inplace-input',
+    destinationFolder: 'C:\\Users\\Mona\\Desktop\\inplace-input\\extracted',
+    extractedModuleOptions: {
+        "name": "ezo-ngx-extract",
+        "description": "Extrait un module angular d'une application",
+        "author": "Ezo",
+        "license": "ISC"
     }
+});
 
-    extractModule(options) {
-
-    }
-}
+/* stop remove */
 
 module.exports = NgxExtract;

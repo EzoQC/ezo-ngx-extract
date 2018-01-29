@@ -9,7 +9,16 @@ class NgxExtract {
     }
 
     extractModule(options) {
+        if (!options.fullName || !options.destinationFolder) throw new Error();
+        let moduleToExtractPath = this.moduleParser.getChildModulePath(options.fullName);
 
+        if (!this.moduleParser.isAngularModule(moduleToExtractPath)
+            || this.moduleParser._pathTools.exists(options.destinationFolder)) {
+            throw new Error();
+        }
+
+        this.moduleParser._pathTools.createFolder(options.destinationFolder);
+        this.moduleParser._pathTools.createFolder(options.destinationFolder);
     }
 
     get appModulePath() { return this._appModulePath }
